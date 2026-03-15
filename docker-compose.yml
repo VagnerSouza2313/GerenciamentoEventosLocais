@@ -11,12 +11,4 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5432:5432"
-
-  app:
-    build: .
-    container_name: eventclean_api1
-    depends_on:
-      - postgres
-    ports:
-      - "8080:8080"
+      - "5431:5432"
