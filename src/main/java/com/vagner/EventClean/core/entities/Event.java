@@ -13,6 +13,7 @@ public class Event {
     private LocalDateTime fim;
     private String identificar;
     private String local;
+    private Integer capacidade;
     private String organizador;
     private TipoEvento tipo;
 
