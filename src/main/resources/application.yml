@@ -13,5 +13,8 @@ spring:
       hibernate:
         format_sql: true
 
+  flyway:
+    enable: true
+
 server:
   port: 8080
