@@ -2,8 +2,10 @@ package com.vagner.EventClean.core.usecases;
 
 import com.vagner.EventClean.core.entities.Event;
 
-public interface buscarEventoCase {
+import java.util.List;
 
-    public Event update(Event evento);
+public interface BuscarEventoCase {
+
+    public List<Event> update();
 
 }
