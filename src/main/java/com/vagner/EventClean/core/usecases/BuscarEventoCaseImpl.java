@@ -14,7 +14,7 @@ public class BuscarEventoCaseImpl implements BuscarEventoCase {
     }
 
     @Override
-    public List<Event> update() {
+    public List<Event> execute() {
         return eventGateway.listarEventos();
     }
 }
