@@ -23,7 +23,7 @@ public class EventEntity {
     private String descricao;
     private LocalDateTime data_inicio;
     private LocalDateTime data_fim;
-    private String identificar;
+    private String identificador;
     private String local_evento;
     private Integer capacidade;
     private String organizador;
