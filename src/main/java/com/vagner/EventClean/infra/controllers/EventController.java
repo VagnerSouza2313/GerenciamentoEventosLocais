@@ -9,9 +9,12 @@ import com.vagner.EventClean.infra.persistence.EventEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Data
@@ -37,11 +40,14 @@ public class EventController {
     }
 
     @GetMapping("listaEventos")
-    public List<EventDTO> listarEventos(){
-        List<Event> list = buscarEventoCase.update();
-        return list.stream()
+    public ResponseEntity<Map<String, Object>> listarEventos(){
+        List<Event> list = buscarEventoCase.execute();
+        Map<String, Object> resultado = new HashMap<>();
+        resultado.put("Mensagem: ", "evento cadastrado com sucesso!");
+        resultado.put("Dados do evento: ", list.stream()
                 .map(eventDTOMapper::toDto)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()));
+        return ResponseEntity.ok(resultado);
     }
 
 
